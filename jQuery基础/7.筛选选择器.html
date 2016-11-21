@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <span>我是第1个span</span>
+    <span id="sp">我是第2个span</span>
+    <span>我是第3个span</span>
+</div>
+
+<div id="div">
+    <p>Hello</p>
+</div>
+<div class="selected">
+    <p>Hello Again</p>
+</div>
+
+<div>
+    <ul>
+        <li>我是li01</li>
+        <li>我是li02</li>
+        <li>我是li03</li>
+        <li id="li04">我是li04</li>
+        <li>我是li05</li>
+        <li class="liItem">我是li06</li>
+        <li>我是li07</li>
+        <li>我是li08</li>
+    </ul>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+   //筛选选择器 eq first parent siblings find
+    $(function () {
+        $('li').eq(2).css('background-color','red');
+        $('li').first().css('background-color','purple');
+        $('li').last().css('background-color','purple');
+        $('p').parent().css('background-color','blue');
+//        $('p').parents().css('background-color','blue');
+        $('#sp').siblings().css('background-color','yellow');
+        $('li').siblings('.liItem').css('background-color','orange');
+        $('ul').find('#li04').css('background-color','gold');
+        $('ul').children('.liItem').css('background-color','gold');//children不带参数表示所有子元素
+        $('#li04').next().css('background-color','#000');  //下一个同级元素
+        $('#li04').prev().css('background-color','#000');  //前一个同级元素
+        $('#div').prev().css('background-color','red');
+        $('div').has('p').css('background-color','pink');  //has 包含某元素的
+
+        /**
+         * html()和text()区别
+         */
+        console.log($('#div').html());  //包含html标签
+        console.log($('#div').text());  //不包含html标签
+    })
+</script>
+</html>

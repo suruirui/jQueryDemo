@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 600px;
+            height: 50px;
+            background-color: #ccc;
+            font-size: 30px;
+            margin: 100px;
+        }
+        h3{
+            width: 200px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="over">
+    <h3>mouseover </h3><span></span>
+</div>
+<div class="enter">
+    <h3>mouseenter</h3><span></span>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    /**
+     * 在包含子元素上动的时候mouseover会触发  mouseenter不会触发
+     *
+     */
+    var x = 0,y=0;
+    $('.over').mouseover(function () {
+        x++;
+        $('.over span').html(x);
+    })
+    $('.enter').mouseenter(function () {
+        y++;
+        $('.enter span').html(y);
+    })
+
+
+</script>
+</html>

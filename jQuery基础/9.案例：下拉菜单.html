@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            list-style: none;
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            width: 330px;
+            height: 40px;
+            margin: 100px auto;
+        }
+        .nav li{
+            width: 100px;
+            text-align: center;
+            line-height: 40px;
+            display: inline-block;
+            /*border: 1px solid #ccc;*/
+            position: relative;
+        }
+        .nav li a{
+            color:#369;
+        }
+        .nav li ul{
+            position: absolute;
+            display: none;
+            top: 40px;
+            left: -1px;
+        }
+        .nav li ul li{
+            margin-top: -1px;
+        }
+        .nav li ul li a{
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+            background-color: #ffffff;
+            color: #000;
+
+        }
+        .nav li ul li a:hover{
+            color:#fff;
+            background-color: #ff0;
+        }
+        /*.nav li:hover ul{*/
+            /*display: block;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<ul class="nav">
+    <li>
+        <a href="#">课程介绍</a>
+        <ul>
+            <li><a href="#">html5</a></li>
+            <li><a href="#">css3</a></li>
+            <li><a href="#">js</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">学员作品</a>
+        <ul>
+            <li><a href="#">轮播图</a></li>
+            <li><a href="#">动画</a></li>
+            <li><a href="#">鼠标细节</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">联系方式</a>
+        <ul>
+            <li><a href="#">qq</a></li>
+            <li><a href="#">微信</a></li>
+            <li><a href="#">电话</a></li>
+        </ul>
+    </li>
+</ul>
+</body>
+<script src='js/jquery.min.js'></script>
+<script>
+    $(function () {
+        $('.nav li').hover(function () {
+            $(this).children('ul').slideToggle();
+        })
+    })
+</script>
+</html>
