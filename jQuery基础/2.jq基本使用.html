@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            height: 100px;
+            margin-top: 20px;
+            background-color: pink;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">按钮</button>
+<div></div>
+<div></div>
+<div></div>
+</body>
+<script src="js\jquery.min.js"></script>
+<script>
+    //jquery write less do more
+    //jquery入口函数
+    $(document).ready(function () {
+        $('#btn').click(function () {
+//            $('div').slideToggle('slow').html('文本内容');
+//            $('div').fadeToggle('slow').html('文本内容');
+            $('div').toggle('slow').html('文本内容');
+        })
+    });
+
+    //入口函数2.与$(document).ready是等价的
+//    $(function () {
+//        alert(2);
+//    })
+</script>
+</html>

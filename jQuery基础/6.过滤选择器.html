@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul>
+    <li><a href="#" title="1">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="sina.com">3</a></li>
+    <li><a href="http://pan.baidu.com">4</a></li>
+    <li><a href="http://map.baidu.com">5</a></li>
+    <li><a href="http://www.baidu.com">6</a></li>
+</ul>
+<input type="checkbox" checked="true"/>
+<input type="checkbox"/>
+<input type="checkbox" checked="true"/>
+<input type="checkbox" checked="true"/>
+<input type="checkbox" checked="true"/>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    /**
+     * 过滤选择器
+     */
+    $(function () {
+        /**
+         * 基本过滤选择器
+         */
+        //获取第N个元素 :eq(index)
+        $('li:eq(1)').css('background-color','red');
+        //匹配所有大于给定索引值的元素 :gt(i)  great lan
+        $('li:gt(2)').css('background-color','purple');
+        //匹配所有小于给定索引值的元素 :lt(i) less lan
+        $('li:lt(5)').css('background-color','blue');
+        //奇数 偶数
+        $('li:odd').css('background-color','orange'); //:odd奇数
+        $('li:even').css('background-color','gold'); //:even奇数
+        //第一 最后
+        $('li:first').css('background-color','white');
+        $('li:last').css('background-color','#000');
+        /**
+         * 属性选择器
+         */
+        //选择所有包含href属性的元素 a[href]
+        $('a[href]').css('color','red');
+        console.log($("input[checked]"));
+        //选择所有属性值为#的元素
+        $("a[href='#']").css('color','green');
+        console.log($("input[checked='true']"));
+        //匹配所有不含有checked属性，或者属性不等于特定值的元素
+        $("input[checked!='true']").attr('checked','true');//attr()操作属性
+        //匹配href属性是以http开始的元素
+        $("a[href^='http']").css('color','#000');
+        //匹配href$属性是以com结尾的元素
+        $("a[href$='com']").css('color','blue');
+        //匹配href属性是包含baidu的元素
+        $("a[href*='baidu']").css('color','#fff');
+        //匹配多个属性规则
+        $("a[title][href='#']").css('background-color','red');
+    })
+</script>
+</html>

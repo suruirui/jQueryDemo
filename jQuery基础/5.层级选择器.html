@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="news">
+    <h3>标题
+        <a href="#">地址2</a>
+    </h3>
+    <p>段落内容
+        <a href="#">地址</a>
+    </p>
+    <span>2016-02-20</span>
+    <a href="#">更多</a>
+</div>
+<ul id="list">
+    <li class="cur"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+</ul>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    /**
+     * 层级选择： 后代选择器  空格   子代选择器  >    兄弟选择器 +(相邻) ~(通用)
+     */
+ $(function () {
+     //后代选择器  #news a
+     $('#news a').css({'color':'red','text-decoration':'none'});
+     $('#list a').css('color','red');
+     //子代选择器  #news > a
+     $('#news > a').css('color','yellow');
+    //兄弟选择器
+     $('.cur + li').css('background-color','red');
+     $('.cur ~ li > a').css('color','#ff0');
+
+ })
+
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            height: 100px;
+            margin-top: 20px;
+            background-color: pink;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementById('btn');
+            console.log(btn);
+            var divs = document.getElementsByTagName('div');
+            btn.onclick = function () {
+                for(var i =0;i<divs.length;i++){
+                    divs[i].style.display = 'block';
+                    divs[i].innerHTML = '文本内容';
+                }
+            }
+        }
+        /**
+         * js  window.onload入口函数会覆盖之前的函数
+         * jq不会
+         */
+//        window.onload = function () {
+//            alert(1);
+//        }
+    </script>
+</head>
+<body>
+<button id="btn">按钮</button>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

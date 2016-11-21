@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="btn">点击</button>
+</body>
+<script src="js\jquery.min.js"></script>
+<script>
+//    $(document)  // document DOM对象   $(document) 转成一个jq对象
+//this DOM对象  $(this)jq对象
+
+        var btn = document.getElementById('btn');
+        console.log($(btn)); //js对象转成jq对象
+     $(function () {
+         console.log($('#btn')[0]);  //jq对象转成js对象
+         console.log($('#btn').get(0));
+     })
+
+</script>
+</html>
